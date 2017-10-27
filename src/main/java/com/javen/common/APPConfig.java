@@ -49,14 +49,14 @@ public class APPConfig extends JFinalConfig{
 	 * @param pro 生产环境配置文件
 	 * @param dev 开发环境配置文件
 	 */
-	public void loadProp(String pro, String dev) {
+	/*public void loadProp(String pro, String dev) {
 		try {
 			PropKit.use(pro);
 		}
 		catch (Exception e) {
 			PropKit.use(dev);
 		}
-	}
+	}*/
 	/**
 	 * 配置常量
 	 */
@@ -65,13 +65,13 @@ public class APPConfig extends JFinalConfig{
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		/*loadProp("javen_config_pro.txt", "javen_config.txt");*/
 
-		//PropKit.use("javen_config_pro.txt");
-		PropKit.use("javen_config.txt");
+		PropKit.use("javen_config_pro.txt");
+		//PropKit.use("javen_config.txt");
 		me.setDevMode(PropKit.getBoolean("devMode", false));
 		me.setEncoding("utf-8");
 		me.setViewType(ViewType.JSP);
 		//设置上传文件保存的路径
-		me.setBaseUploadPath(PathKit.getWebRootPath()+File.separator+"myupload");
+		me.setBaseUploadPath(PathKit.getWebRootPath()+File.separator+"uploads");
 		// ApiConfigKit 设为开发模式可以在开发阶段输出请求交互的 xml 与 json 数据
 		ApiConfigKit.setDevMode(me.getDevMode());
 
